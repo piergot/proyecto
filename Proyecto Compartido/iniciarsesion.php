@@ -8,7 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="css/css.css">
 		<link rel="icon" type="image/png" href="img/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Inicio</title>
+		<title>Iniciar Sesión</title>
 	</head>
 	<body>
 		<div class="cabeza">

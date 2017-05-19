@@ -7,7 +7,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/css.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Inicio</title>
+		<title>Perfil</title>
 	</head>
 	<body onload="backgroundChange()">
 		<div class="cabeza">
