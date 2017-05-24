@@ -28,7 +28,7 @@
 								echo "<ol>";
 								while($results = mysql_fetch_array($artistasmaspopulares)){
 									$contador = $contador + 1;
-									echo  "<li><img src='".$results['foto_artista']."'></a><a href='http://localhost/Proyecto_Musicbox/Web/pagina%20real/artista.php?busqueda=".$results['nombre']."&search=BUSCAR'>".$results['nombre']."<span>".$contador."</span></a></li>";
+									echo  "<li><img src='".$results['foto_artista']."'></a><a href='/artista.php?busqueda=".$results['nombre']."&search=BUSCAR'>".$results['nombre']."<span>".$contador."</span></a></li>";
 								}
 								echo "</ol>";
 							}
@@ -46,7 +46,7 @@
 								echo "<ol>";
 								while($results = mysql_fetch_array($discossmaspopulares)){
 									$contador = $contador + 1;
-									echo "<li><img src='".$results['portada']."'><a href='http://localhost/Proyecto_Musicbox/Web/pagina%20real/disco.php?busqueda=".$results['titulo_disco']."&search=BUSCAR'>".$results['titulo_disco']."</a><a href='http://localhost/Proyecto_Musicbox/Web/pagina%20real/artista.php?busqueda=".$results['nombre']."&search=BUSCAR'>".$results['nombre']."<span>".$contador."</span></a></li>";
+									echo "<li><img src='".$results['portada']."'><a href='disco.php?busqueda=".$results['titulo_disco']."&search=BUSCAR'>".$results['titulo_disco']."</a><a href='/artista.php?busqueda=".$results['nombre']."&search=BUSCAR'>".$results['nombre']."<span>".$contador."</span></a></li>";
 								}
 								echo "</ol>";
 							}

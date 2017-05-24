@@ -62,8 +62,8 @@
               echo "<h2>Lista de &aacute;lbumes</h2><div id='lista-de-discos-artista'>";
                while($results = mysql_fetch_array($raw_results)){
                  if($results['portada']) {
-                  echo "<div class='nombre-disco-mas-disco-portada'><a href='http://localhost/Proyecto_Musicbox/Web/pagina%20real/disco.php?busqueda=".$results['titulo_disco']."&search=BUSCAR'><img class='portada-disco-artista'src='".$results['portada']."'></a>";
-                  echo "<a id='nombre-disco-estilo-enlance' href='http://localhost/Proyecto_Musicbox/Web/pagina%20real/disco.php?busqueda=".$results['titulo_disco']."&search=BUSCAR'><span>".$results['titulo_disco']."</span></a></div>";
+                  echo "<div class='nombre-disco-mas-disco-portada'><a href='disco.php?busqueda=".$results['titulo_disco']."&search=BUSCAR'><img class='portada-disco-artista'src='".$results['portada']."'></a>";
+                  echo "<a id='nombre-disco-estilo-enlance' href='disco.php?busqueda=".$results['titulo_disco']."&search=BUSCAR'><span>".$results['titulo_disco']."</span></a></div>";
                  }
             }
               echo "</div>";

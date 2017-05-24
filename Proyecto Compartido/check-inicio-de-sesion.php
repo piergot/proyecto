@@ -34,7 +34,7 @@
 	    $_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
 	 
 	    echo "Bienvenido! " . $_SESSION['username'];
-		header('Location: http://localhost/Proyecto_Musicbox\Web\pagina real/index.php');	 
+		header('Location: index.php');	 
 	 } else { 
 	   echo "Username o Password estan incorrectos.";
 	 

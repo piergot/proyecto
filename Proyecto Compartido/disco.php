@@ -34,7 +34,7 @@ session_start();
 		                  while($results = mysql_fetch_array($raw_results)){
                     		/*Muestra el resultado de la busqueda extraidos de la base de datos*/
 		                      echo "<div class='divdiscos'>";
-		                      echo "<p><div id='divdiscos-divportada'><a href='http://localhost/Proyecto_Musicbox/Web/pagina%20real/".$results['portada']."'><img id='divdiscos-portada' src='".$results['portada']."'></a>";
+		                      echo "<p><div id='divdiscos-divportada'><a href='".$results['portada']."'><img id='divdiscos-portada' src='".$results['portada']."'></a>";
 		                      echo "<p><a class='divdiscos-botondebajoportada' href='".$results['spotify_enlace']."'>Spotify</a></p>";
 		                      echo "<a class='divdiscos-botondebajoportada' href='".$results['amazon_enlace']."'>Amazon</a>";
 		                      echo "<a class='divdiscos-botondebajoportada' href='".$results['apple_enlace']."'>Apple Music</a></div></p>";
