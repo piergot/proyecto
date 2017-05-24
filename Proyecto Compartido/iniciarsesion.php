@@ -3,63 +3,36 @@
 ?>
 <!DOCTYPE html>
 <html>
-	<head>
-		<link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="css/css.css">
-		<link rel="icon" type="image/png" href="img/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Iniciar Sesión</title>
-	</head>
+	<?php 
+		$title = 'Iniciar Sesión';
+		include("components/head.php"); 
+	?>
 	<body>
-		<div class="cabeza">
-			<!--El menu principal de la página-->
-			<div id="elmenu" class="menu">
-				<div id="logo"><a href="index.php" ><img src="img/logo_grande.png" alt=""></a></div>
-				<a href="javascript:void(0);" id="iconoresponsive" onclick="menuResponsive()"><img id="" src="img/iconohamburguesa.svg"></a>
-				<div id="ademenu">
-					<a href="nuevoslanzamientos.php">Nuevos lanzamientos</a>
-					<a href="musicapopular.php">M&uacute;sica</a>
-					<a href="#">Noticias</a>
-					<a href="contacto.php">Contacto</a>
-					<!--Opciones para el responsive-->
-					<a href="iniciarsesion.php" id="iniciosesionresponsive" style="display:none;">Iniciar sesi&oacute;n</a>
-					<a href="registro.php" id="registroresponsive" style="display:none;">Registrarse</a>
+		<!-- Header -->
+		<?php include("components/header.php"); ?>
+		<div class="cuerpo container contenido-centrado">
+			<div class="row">
+				<div class="col-sm-6 col-xs-12 col-sm-offset-3">
+					<h1>Inicio de sesi&oacute;n</h1>
+					<form action="check-inicio-de-sesion.php" method="POST">
+						<div class="form-group">
+							<label for="nombreUsuario">Nombre de Usuario</label>
+							<input type="text" name="nombreusuario" id="nombreUsuario" placeholder="Ingresa un Nombre de Usuario" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="contraseña">Contraseña</label>
+							<input type="password" class="form-control" id="contraseña" name="contrasenausuario" placeholder="Ingresa una Contraseña">
+						</div>
+						<button type="submit" name="search" class="btn btn-default">Enviar</button>
+					</form>
 				</div>
-				<!--Menú desplegable del extremo derecho-->
-				<div style="float:right;" class="menudesplegable">
-					<div class="menudesplegable2" onclick="menuDespegable()"><img id="iconodeiniciodesesion"src="img/iniciosension_icono.svg" ></div>
-					<div class="contenidodespegable" id="contenidodespegable2">
-					<?php
-					//Comprueba si el usuario está logueado o no, si está logueado muestra distintas opciones en el menú desplegable
-						if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-							echo "<a href='perfil-usuario.php'>Perfil del usuario</a>
-							<a href='cerrar-session.php'>Cerrar sesi&oacute;n</a>";
-		 				}
+			</div>
+		</div>
+		<!--Pie-->
+		<?php include("components/footer.php"); ?>
 
-		 				else{
-		 					echo "<a href='iniciarsesion.php'>Iniciar sesi&oacute;n</a>
-							<a href='registro.php'>Registrarse</a>";
-		 				}
-					?>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="cuerpo">
-			<!--DIV de inicio de sesión-->
-			<img id="imagen_fondo" src="">
-			<div class="diviniciosesion"><h1>Inicio de sesi&oacute;n</h1>
-				<form action="check-inicio-de-sesion.php" method="POST">
-					<br>
-					<input type="text" name="nombreusuario" placeholder="NOMBRE DE USUARIO"><br>
-					<br>
-					<input type="password" name="contrasenausuario" placeholder="CONTRASE&Ntilde;A"><br>
-					<br>
-						<input type="submit" name="search" value="BUSCAR" />
-				</form>
-			</div>
-		</div>
-		<script type="text/javascript" src="js/main.js"></script>
+		<!-- Js Files -->
+		<?php include("components/js-files.php"); ?>
 		<script type="text/javascript">
 			function menuDespegable(){
 				document.getElementById("contenidodespegable2").classList.toggle("mostrarcontenido");

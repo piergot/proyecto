@@ -65,7 +65,7 @@
 
 			body{
 				height: 100%;
-				background-color: lightgrey;
+				background-color: #f1f1f1;
 			}
 			*{
 				padding:0;
@@ -76,15 +76,13 @@
 
 			.cuerpo{
 				background-color: white;
-				min-height: 800px;
+				min-height: calc(100vh - 125px);;
 				position: relative;
 			}
 
 			.pie{
-				position:absolute;
-				bottom:0;
 				width:100%;
-				height:140px; 
+				height:50px; 
 				background-color: #333;
 			}
 
@@ -94,12 +92,18 @@
 				background-color: #333;
 			}
 
-			#logo {
-				float:left;
+			.logo img{
 				width: 100px;
-				margin-top:5px;
-				margin-right: 15%;
+				margin: 10px;
+			}
 
+			.logo-grande {
+				filter: invert(50%);
+				opacity: .2;
+				padding: 0 30px 30px 30px;
+    			margin-top: -20vh;
+				display: inline-block;
+				width: 600px;
 			}
 
 			#logo a{
@@ -107,12 +111,18 @@
 				margin: 0px;
 				
 			}
-
-			#logo img{
-				width:100%;
-				height:auto;
+			
+			.cabecera-menu{
+				margin: 0;
 			}
 
+			.menu-principal, .menu-secundario {
+				margin-top: 15px; 
+				font-size: 16px;
+			}
+			 .navbar-toggle {
+				 margin-top: 20px;
+			 }
 			
 			.menu {
 			    list-style-type: none;
@@ -155,6 +165,12 @@
 
 			}
 
+			.contenido-centrado {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
 
 			.contenidodespegable{
 				display: none;
@@ -186,7 +202,7 @@
 			}
 
 			/*Estilo del buscador*/
-			.busquedayboton input[type=text]{
+			/*.busquedayboton input[type=text]{
 				border-radius: 1px;
 				padding: 16px 0;
 				background-color:rgba(51,51,51 ,0.8);
@@ -200,7 +216,7 @@
 				background-color:rgba(51,51,51 ,0.8);
 			    color: white;
 			    display: block;
-	/*		    height: 40px;*/
+			    height: 40px;
 				padding: 7.8px;
 				margin-left: 4px ;
 			    line-height: 40px;
@@ -213,11 +229,6 @@
 			#boton-busqueda:hover{
 				background-color: #28666E
 			}
-			.busquedayboton{
-				position: relative;
-				top: 340px;
-				padding-left: 29%;
-			}
 			#selectform{
 				padding: 15px;
 				float: left;
@@ -225,10 +236,25 @@
 				background-color:rgba(51,51,51 ,0.8);
 				color: white;
 				font-size: 15px;
+			}*/
+
+			
+			.busquedayboton{
+				text-align: center;
+				display: table;
+				/*height: calc(100vh - 205px);*/
 			}
 
+			.busquedayboton .busqueda-box {
+				display: table-cell;
+				vertical-align: middle;
+				text-align: center;
+				width: 100%;
+			}
 
-
+			.caja-busqueda input {
+				width: 100% !important;
+			}
 
 			/*Cambia el color del placeholder*/
 			::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -306,31 +332,62 @@
 
 
 			/*Estilo de los DIV de sección de músic popular*/
-			.musicapopulardiv:first-child {
-				margin: 15px;
-				display: block;
-				width: 45%;
-				font-size: 25px;
-				text-align: center;
-				float:left;
-			}
 
-			.musicapopulardiv:last-child {
-				margin: 15px;
-				display: block;
-				width: 45%;
-				font-size: 25px;
-				text-align: center;
-				float:right;
-			}
 
 			.musicapopulardiv a{
 				text-decoration: none;
 				color: black;
+				font-size: 16px;
+			}
+
+			.musicapopulardiv li a:after{
+				content: " - "
+			}
+
+			.musicapopulardiv li a:last-child:after{
+				content: ""
 			}
 
 			.musicapopulardiv a:hover{
 				text-decoration: underline;
+			}
+
+			.musicapopulardiv ol {
+				list-style: none;
+			}
+
+			.musicapopulardiv li {
+				padding: 10px;
+			}
+
+			.musicapopulardiv li span{
+				float: right;
+				display: block;
+				width: 50px;
+				height: 70px;
+				margin: -10px -10px -10px 10px;
+				padding: 15px;
+				font-size: 30px;
+				background: #c30023;
+				color: #fff;
+				font-weight: 600;
+			}
+
+			.musicapopulardiv li:nth-child(odd) span{
+				background: #b70020;
+			}
+			.musicapopulardiv li img {
+				margin: -10px 10px -10px -10px;
+				width: 70px;
+				height: 70px
+			}
+
+			.musicapopulardiv li:nth-child(odd) {
+				background: #cccccc;
+			}
+
+			.musicapopulardiv li:nth-child(even) {
+				background: #dcdcdc;
 			}
 
 			.musica-divartistaslistas{
@@ -469,22 +526,20 @@
 
 
 			/*Estilo de página de artistas*/
-			#divartistas{
-				display: inline-block;
-				color: #333;
-				font-size: 25px;
+			#foto {
+				margin: 0 -15px;
 			}
-
 			#imagenartista{
-				width: 250px;
-				height: 250px;
+				width: 100%;
+				max-height: 250px;
 				z-index: +1;
 				position: relative;
-				float: left;
-				margin: 3px;
-				border-radius: 50%;
-				border: 1px solid black;
+			}
 
+			.contenido-artista {
+				border-right: 1px solid #f1f1f1;
+				margin-right: -15px; 
+				padding: 15px 15px 15px 0; 
 			}
 
 			.perfildelartista{
@@ -492,40 +547,49 @@
 			}
 
 			.portada-disco-artista{
-				width: 150px;
-				height: auto;
-				vertical-align: middle;
-				margin-top:30px;
-
+				width: 100%;
 			}
 
 			.nombre-disco-mas-disco-portada{
-				width:190px;
-				height: 200px;
-				float:left;
-				margin: 2px;
-				text-align: center;
+				display: inline-block;
+				width: calc(100% / 3);
+				vertical-align: middle;
+				position: relative;
 			}
 
-			#nombre-disco-estilo-enlance:hover{
-				text-decoration: underline;
+			.nombre-disco-mas-disco-portada:hover #nombre-disco-estilo-enlance{
+				display: flex;
+			}
+
+			#lista-de-discos-artista {
+				margin-bottom: 30px;
 			}
 
 			#nombre-disco-estilo-enlance{
-				text-decoration:none;
-				color:black;
+				text-decoration: none;
+				position: absolute;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				text-align: center;
+				justify-content: center;
+				flex-direction: column;
+				background: rgba(0,0,0,.5);
+				color: white;
+				font-size: 16px;
+				display: none;
 			}
 
+			#divartistas h2 {
+				text-align: center;
+				font-size: 35px;
+				padding: 20px;
+				border-bottom: 1px solid  #f1f1f1;
+			}
 
 			.nombre-disco-mas-disco-portada p{
 				font-size: 15px;
-			}
-
-			#lista-de-discos-artista{
-				display: inline-block;
-				background-color: orange;
-				margin-left: 5%;
-				margin-right:5%;
 			}
 
 			/*CSS de los discos*/
@@ -652,4 +716,33 @@
 			.divformularioregistro button:hover{
 				background-color: #008CBA;
 				cursor: pointer;
+			}
+
+			@media (min-width: 900px) {
+				.menu-principal {
+					margin-left: 30px;  
+				}
+
+				
+			}
+
+			@media (max-width: 850px) {
+				.menu-secundario .texto {
+					display: none;
+				}
+			}
+
+			@media (max-width: 750px) {
+				.contenido-artista {
+					background: #f1f1f1;
+					margin: 0 -15px;
+					border: none;
+					padding: 15px;
+				}
+			}
+
+			@media (min-width: 768px){
+				.caja-busqueda {
+					width: 50%;
+				}
 			}

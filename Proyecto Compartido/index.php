@@ -13,22 +13,34 @@
 		<?php include("components/header.php"); ?>
 
 		<!-- Main Container -->
-		<main class="cuerpo container">
-			<div class="row">
-				<div class="col-xs-12">
-					<!--Formulario buscador-->
-					<div class="busquedayboton">
-						<form method="GET" action="" id="formularioprincipio">
-							<input  id="cajadebusqueda" type="text" name="busqueda" placeholder=" Ejemplo: The Beatles">
-							<select id="selectform">
-								<option value="Artista">ARTISTA</option>
-								<option value="Disco">DISCO</option>
-							</select>
-							<input type="submit" onclick="cambioAction(event)"/>
-						</form>
+		<main class="cuerpo container busquedayboton">
+			<div class="busqueda-box">
+				<div class="row">
+					<div class="col-xs-12">
+						<img src="img/logo_grande.png" alt="" class="logo-grande img-responsive">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<!--Formulario buscador-->
+						<div class="formulario">
+							<form method="GET" action="" id="formularioprincipio" class="form-inline">
+								<div class="form-group caja-busqueda">
+									<input  id="cajadebusqueda" type="text" name="busqueda" placeholder=" Ejemplo: The Beatles" class="form-control">
+								</div>
+								<div class="form-group">
+									<select id="selectform" class="form-control">
+										<option value="Artista">ARTISTA</option>
+										<option value="Disco">DISCO</option>
+									</select>
+								</div>
+								<input type="submit"  class="btn btn-default" onclick="cambioAction(event)"/>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
+			
 		</main>
 
 		<!--Pie-->

@@ -3,63 +3,45 @@
 ?>
 <!DOCTYPE html>
 <html>
-	<head>
-		<link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="css/css.css">
-		<link rel="icon" type="image/png" href="img/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Registro</title>
-	</head>
+	<?php 
+		$title = 'Perfil del Usuario';
+		include("components/head.php"); 
+	?>
 	<body>
-		<div class="cabeza">
-			<!--El menu principal de la página-->
-			<div id="elmenu" class="menu">
-				<div id="logo"><a href="index.php" ><img src="img/logo_grande.png" alt=""></a></div>
-				<a href="javascript:void(0);" id="iconoresponsive" onclick="menuResponsive()"><img id="" src="img/iconohamburguesa.svg"></a>
-				<div id="ademenu">
-					<a href="nuevoslanzamientos.php">Nuevos lanzamientos</a>
-					<a href="musicapopular.php">M&uacute;sica</a>
-					<a href="#">Noticias</a>
-					<a href="contacto.php">Contacto</a>
-					<!--Opciones para el responsive-->
-					<a href="iniciarsesion.php" id="iniciosesionresponsive" style="display:none;">Iniciar sesi&oacute;n</a>
-					<a href="registro.php" id="registroresponsive" style="display:none;">Registrarse</a>
+		<!-- Header -->
+		<?php include("components/header.php"); ?>
+		<div class="cuerpo container contenido-centrado">
+			<div class="row">
+				<div class="col-sm-6 col-xs-12 col-sm-offset-3">
+					<h1>Registrate</h1>
+					<form method="post" name="formularioderegistro" action="registro-usuario.php">
+						<div class="form-group">
+							<label for="nombreUsuario">Nombre de Usuario</label>
+							<input type="text" name="nombreus" id="nombreUsuario" placeholder="Ingresa un Nombre de Usuario" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="correoElectronico">Correo Electrónico</label>
+							<input type="email" name="correoelectronico" id="correoElectronico" placeholder="Ingresa un Correo Electrónico" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="contraseña">Contraseña</label>
+							<input type="password" name="contra" id="contraseña" class="form-control"  placeholder="Ingresa una Contraseña">
+						</div>
+						<div class="form-group">
+							<label for="contraseña2">Confirmar Contraseña</label>
+							<input type="password" name="contra2" class="form-control" id="contraseña2" placeholder="Confirma la Contraseña">
+						</div>
+						<button type="submit" class="btn btn-default">Aceptar</button>
+						<p id="mostrarResultadoErrores"></p>
+					</form>
 				</div>
-				<!--Menú desplegable del extremo derecho-->
-				<div style="float:right;" class="menudesplegable">
-					<div class="menudesplegable2" onclick="menuDespegable()"><img id="iconodeiniciodesesion"src="img/iniciosension_icono.svg" ></div>
-					<div class="contenidodespegable" id="contenidodespegable2">
-					<?php
-					//Comprueba si el usuario está logueado o no, si está logueado muestra distintas opciones en el menú desplegable
-						if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-							echo "<a href='perfil-usuario.php'>Perfil del usuario</a>
-							<a href='cerrar-session.php'>Cerrar sesi&oacute;n</a>";
-		 				}
+			</div>
+		</div>
+		<!--Pie-->
+		<?php include("components/footer.php"); ?>
 
-		 				else{
-		 					echo "<a href='iniciarsesion.php'>Iniciar sesi&oacute;n</a>
-							<a href='registro.php'>Registrarse</a>";
-		 				}
-					?>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="cuerpo">
-			<!--Formulario de registro-->
-			<div class="divformularioregistro">
-				<h1>Formulario de registro</h1>
-				<form method="post" name="formularioderegistro" action="registro-usuario.php">
-					<input type="text" name="nombreus" placeholder="NOMBRE DE USUARIO"><br>
-					<input type="email" name="correoelectronico" placeholder="CORREO ELECTRONICO"><br>
-					<input type="password" name="contra" placeholder="CONTRASE&Ntilde;A"><br>
-					<input type="password" name="contra2" placeholder="CONFIRMAR CONTRASE&Ntilde;A"><br>
-					<button type="submit">ACEPTAR</button>
-					<p id="mostrarResultadoErrores"></p>
-				</form>
-			</div>
-		</div>
-		<script type="text/javascript" src="js/main.js"></script>
+		<!-- Js Files -->
+		<?php include("components/js-files.php"); ?>
 		<script type="text/javascript">
 			function menuDespegable(){
 				document.getElementById("contenidodespegable2").classList.toggle("mostrarcontenido");
