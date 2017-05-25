@@ -26,7 +26,7 @@
 		$actualizarcalificacion = "UPDATE calificaciones SET calificacion_usuario='$_POST[calificacion]' WHERE nombre_usuario = '$_POST[hola2]' AND  id_disco = '$_POST[hola]'";
 		if ($conexion->query($actualizarcalificacion) === TRUE) {
 			echo "voto actualizado";
-	 		header("Location: http://localhost/Proyecto_Musicbox/Web/pagina%20real/disco.php?busqueda=$_POST[hola3]");	 
+	 		header("Location: disco.php?busqueda=$_POST[hola3]");	 
 	 	}	
 	}	 
 	 else{
@@ -36,7 +36,7 @@
 
 	 
 	 if ($conexion->query($query) === TRUE) {
-	 		header("Location: http://localhost/Proyecto_Musicbox/Web/pagina%20real/disco.php?busqueda=$_POST[hola3]");	 
+	 		header("Location: disco.php?busqueda=$_POST[hola3]");	 
 	 }
 	 
 	 else {
@@ -45,7 +45,7 @@
 	}
 	 }
 	 else {
-		header("Location: http://localhost/Proyecto_Musicbox/Web/pagina%20real/iniciarsesion.php");
+		header("Location: iniciarsesion.php");
 	 }
 	 mysqli_close($conexion);
 	?>

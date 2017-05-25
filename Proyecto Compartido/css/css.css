@@ -1,23 +1,3 @@
-/*		@media screen and (min-width: 992px) {
-		    .col-lg-1 {width: 8.33%;}
-		    .col-lg-2 {width: 16.66%;}
-		    .col-lg-3 {width: 25%;}
-		    .col-lg-4 {width: 33.33%;}
-		    .col-lg-5 {width: 41.66%;}
-		    .col-lg-6 {width: 50%;}
-		    .col-lg-7 {width: 58.33%;}
-		    .col-lg-8 {width: 66.66%;}
-		    .col-lg-9 {width: 74.99%;}
-		    .col-lg-10 {width: 83.33%;}
-		    .col-lg-11 {width: 91.66%;}
-		    .col-lg-12 {width: 100%;}
-
-
-		@media screen and (max-width: 991px) and (min-width: 768px) {
-		  	[class*="col-"] {
-		  }
-		}*/
-
 		@media screen and (max-width: 767px) {
 			[class*="col-"] {
 			}
@@ -39,7 +19,7 @@
 			.menu.responsive #iconoresponsive {
 			  	position: absolute;
 			    right: 0;
-			    top: 0;	
+			    top: 0;
 			}
 			#ademenu.responsive {
 				display: block;
@@ -65,7 +45,7 @@
 
 			body{
 				height: 100%;
-				background-color: lightgrey;
+				background-color: #f1f1f1;
 			}
 			*{
 				padding:0;
@@ -76,44 +56,59 @@
 
 			.cuerpo{
 				background-color: white;
-				min-height: 800px;
+				min-height: calc(100vh - 126px);;
 				position: relative;
 			}
 
-			.pie{
-				position:absolute;
-				bottom:0;
+			footer{
 				width:100%;
-				height:140px; 
+				height:50px;
 				background-color: #333;
+
 			}
 
-			/* Header */ 
+			footer > * {
+				color: white;
+			}
+
+			/* Header */
 
 			header {
 				background-color: #333;
 			}
 
-			#logo {
-				float:left;
+			.logo img{
 				width: 100px;
-				margin-top:5px;
-				margin-right: 15%;
+				margin: 10px;
+			}
 
+			.logo-grande {
+				filter: invert(50%);
+				opacity: .2;
+				padding: 0 30px 30px 30px;
+    			margin-top: -20vh;
+				display: inline-block;
+				width: 600px;
 			}
 
 			#logo a{
 				padding: 0px;
 				margin: 0px;
-				
+
 			}
 
-			#logo img{
-				width:100%;
-				height:auto;
+			.cabecera-menu{
+				margin: 0;
 			}
 
-			
+			.menu-principal, .menu-secundario {
+				margin-top: 15px;
+				font-size: 16px;
+			}
+			 .navbar-toggle {
+				 margin-top: 20px;
+			 }
+
 			.menu {
 			    list-style-type: none;
 			    overflow: hidden;
@@ -150,9 +145,15 @@
 			.menudesplegable .menudesplegable2{
 				cursor: pointer;
 			    border: none;
-/*			    outline: none;*/			    
-/*				padding: 14px 16px;*/			
+/*			    outline: none;*/
+/*				padding: 14px 16px;*/
 
+			}
+
+			.contenido-centrado {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
 			}
 
 
@@ -186,7 +187,7 @@
 			}
 
 			/*Estilo del buscador*/
-			.busquedayboton input[type=text]{
+			/*.busquedayboton input[type=text]{
 				border-radius: 1px;
 				padding: 16px 0;
 				background-color:rgba(51,51,51 ,0.8);
@@ -200,7 +201,7 @@
 				background-color:rgba(51,51,51 ,0.8);
 			    color: white;
 			    display: block;
-	/*		    height: 40px;*/
+			    height: 40px;
 				padding: 7.8px;
 				margin-left: 4px ;
 			    line-height: 40px;
@@ -213,11 +214,6 @@
 			#boton-busqueda:hover{
 				background-color: #28666E
 			}
-			.busquedayboton{
-				position: relative;
-				top: 340px;
-				padding-left: 29%;
-			}
 			#selectform{
 				padding: 15px;
 				float: left;
@@ -225,10 +221,25 @@
 				background-color:rgba(51,51,51 ,0.8);
 				color: white;
 				font-size: 15px;
+			}*/
+
+
+			.busquedayboton{
+				text-align: center;
+				display: table;
+				/*height: calc(100vh - 205px);*/
 			}
 
+			.busquedayboton .busqueda-box {
+				display: table-cell;
+				vertical-align: middle;
+				text-align: center;
+				width: 100%;
+			}
 
-
+			.caja-busqueda input {
+				width: 100% !important;
+			}
 
 			/*Cambia el color del placeholder*/
 			::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -306,31 +317,62 @@
 
 
 			/*Estilo de los DIV de sección de músic popular*/
-			.musicapopulardiv:first-child {
-				margin: 15px;
-				display: block;
-				width: 45%;
-				font-size: 25px;
-				text-align: center;
-				float:left;
-			}
 
-			.musicapopulardiv:last-child {
-				margin: 15px;
-				display: block;
-				width: 45%;
-				font-size: 25px;
-				text-align: center;
-				float:right;
-			}
 
 			.musicapopulardiv a{
 				text-decoration: none;
 				color: black;
+				font-size: 16px;
+			}
+
+			.musicapopulardiv li a:after{
+				content: " - "
+			}
+
+			.musicapopulardiv li a:last-child:after{
+				content: ""
 			}
 
 			.musicapopulardiv a:hover{
 				text-decoration: underline;
+			}
+
+			.musicapopulardiv ol {
+				list-style: none;
+			}
+
+			.musicapopulardiv li {
+				padding: 10px;
+			}
+
+			.musicapopulardiv li span{
+				float: right;
+				display: block;
+				width: 50px;
+				height: 70px;
+				margin: -10px -10px -10px 10px;
+				padding: 15px;
+				font-size: 30px;
+				background: #c30023;
+				color: #fff;
+				font-weight: 600;
+			}
+
+			.musicapopulardiv li:nth-child(odd) span{
+				background: #b70020;
+			}
+			.musicapopulardiv li img {
+				margin: -10px 10px -10px -10px;
+				width: 70px;
+				height: 70px
+			}
+
+			.musicapopulardiv li:nth-child(odd) {
+				background: #cccccc;
+			}
+
+			.musicapopulardiv li:nth-child(even) {
+				background: #dcdcdc;
 			}
 
 			.musica-divartistaslistas{
@@ -405,18 +447,7 @@
 
 
 			/*Estilo de los DIV de "Nuevos lanzamientos*/
-			.divdenuevoslanzamientos div:not(#laFechaDia){
-				display: inline-block;
-				height: 220px;
-				width: 32.8%;
-				background-color:rgba(51,51,51 ,0.8);
-				border: 2px solid black;
-			}
-			#laFechaDia{
-				color: white;
-				font-size: 26px;
-				margin-left: 460px;
-			}
+
 
 
 
@@ -469,22 +500,20 @@
 
 
 			/*Estilo de página de artistas*/
-			#divartistas{
-				display: inline-block;
-				color: #333;
-				font-size: 25px;
+			#foto {
+				margin: 0 -15px;
 			}
-
 			#imagenartista{
-				width: 250px;
-				height: 250px;
+				width: 100%;
+				max-height: 250px;
 				z-index: +1;
 				position: relative;
-				float: left;
-				margin: 3px;
-				border-radius: 50%;
-				border: 1px solid black;
+			}
 
+			.contenido-artista {
+				border-right: 1px solid #f1f1f1;
+				margin-right: -15px;
+				padding: 15px 15px 15px 0;
 			}
 
 			.perfildelartista{
@@ -492,73 +521,83 @@
 			}
 
 			.portada-disco-artista{
-				width: 150px;
-				height: auto;
-				vertical-align: middle;
-				margin-top:30px;
-
+				width: 100%;
 			}
 
 			.nombre-disco-mas-disco-portada{
-				width:190px;
-				height: 200px;
-				float:left;
-				margin: 2px;
-				text-align: center;
+				display: inline-block;
+				width: calc(100% / 3);
+				vertical-align: middle;
+				position: relative;
 			}
 
-			#nombre-disco-estilo-enlance:hover{
-				text-decoration: underline;
+			.nombre-disco-mas-disco-portada:hover #nombre-disco-estilo-enlance{
+				display: flex;
+			}
+
+			#lista-de-discos-artista {
+				margin-bottom: 30px;
+			}
+
+			#lista-de-canciones {
+				margin-left: 15px
 			}
 
 			#nombre-disco-estilo-enlance{
-				text-decoration:none;
-				color:black;
+				text-decoration: none;
+				position: absolute;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				text-align: center;
+				justify-content: center;
+				flex-direction: column;
+				background: rgba(0,0,0,.5);
+				color: white;
+				font-size: 16px;
+				display: none;
 			}
 
+			#divartistas h2 {
+				text-align: center;
+				font-size: 35px;
+				padding: 20px;
+				border-bottom: 1px solid  #f1f1f1;
+			}
 
 			.nombre-disco-mas-disco-portada p{
 				font-size: 15px;
 			}
 
-			#lista-de-discos-artista{
-				display: inline-block;
-				background-color: orange;
-				margin-left: 5%;
-				margin-right:5%;
-			}
-
 			/*CSS de los discos*/
-			.divdiscos{
-				position: absolute;
-    			width: 85%;
-			}
 
 			#divdiscos-informaciondisco{
 				width: 70%;
 			}
 
-			#divdiscos-portada{
-			    width: 320px;
-			    height: 320px;
-			    position: relative;
-			    float: left;
-			    margin: 3px;
+			#divdiscos-divportada {
+				margin: 0 -15px;
+				display: block;
+				text-align: center;
+			}
+
+			#divdiscos-portada img{
+			    width: 100%;
 			}
 
 			.divdiscos-botondebajoportada{
-				background-color: lightgrey;
-			    width: 8%;
-			    margin-right: 11px;
-			    text-decoration: none;
-			    border: 1px solid black;
-			    float: left;
-			    text-align: center;
-			    position: relative;
-			    top: 333px;
-			    left: -324px;
-			    font-size: 13px;
-			    color: black;
+				width: calc(100% / 3);
+    			display: inline-block;
+				padding: 10px;
+				background: #222222;
+				color: #9d9d9d;
+			}
+
+			.divdiscos-botondebajoportada:hover {
+				text-decoration: none;
+				color: #fff;
+				background: #101010
 			}
 
 
@@ -571,44 +610,75 @@
 			}
 
 			#disco-formcalificacion{
-				padding-left: 10px;
 				font-size: 20px;
 				float: left;
-				padding-right: 10px;
-				padding-bottom: 3px;
-				padding-top: 2px;
-
+				width: 100%;
+				border: 1px solid #101010;
+				text-align: center;
 			}
 
-			#disco-formcalificacion option{
+			#disco-form option{
 				font-size: 30px;
 			}
 
 			#botonvotacion{
 				padding: 7px;
 				background-color: white;
-				margin-left: 5%;
+				border: 1px solid #101010;
+				width: 100%;
+				margin-top: 3px;
 			}
 
-			#calificacionyvoto{
-			    background-color: grey;
-			    width: 20%;
-			    float: right;
-			    position: absolute;
-			    top: 97px;
-			    left: 72%;
+
+			#botonvotacion:hover{
+				background-color: #101010;
+				color:white;
 			}
 
 			#calificacion-total{
-				background-color: orange;
-				padding: 12%;
+				padding-right: 20%;
+		    float: left;
+		    font-size: 30px;
+		    border-right: 1px solid #101010;
+				text-align: center;
+			}
+			.formulario-discocalificaicon{
 				float:left;
-				font-size: 30px;
-				border-radius: 50%;
+				margin-left: 12%;
+			}
+
+
+			/*CSS Perfil de usuario*/
+
+			.discos-perfildeusuario{
+				display: inline-block;
+				width: calc(100% / 5);
+				vertical-align: middle;
+				position: relative;
+			}
+			.informaciondiscos-perfildeusuario{
+				max-width: 300px;
+				max-height: 300px;
+				width: 100%;
+				height: auto;
+				z-index: +2;
+				background-color: black;
+			}
+
+
+			.discos-perfildeusuario:hover .informaciondiscos-perfildeusuario{
+				background-color: black;
+			}
+
+			.discos-perfildeusuario img{
+				max-width: 300px;
+				max-height: 300px;
+				width: 100%;
+				height: auto;
 			}
 
 			/*CSS Formulario de registro*/
-		
+
 			.divformularioregistro {
 				width: 30%;
 				background-color:rgba(51,51,51 ,0.8);
@@ -627,7 +697,7 @@
 				font-size: 20px;
 								width: 95%;
 				margin-top: 25px;
-			
+
 			}
 			.divformularioregistro h1{
 				color: white;
@@ -652,4 +722,39 @@
 			.divformularioregistro button:hover{
 				background-color: #008CBA;
 				cursor: pointer;
+			}
+
+			@media (min-width: 900px) {
+				.menu-principal {
+					margin-left: 30px;
+				}
+
+
+			}
+
+			@media (max-width: 935px) {
+				.menu-secundario .texto {
+					display: none;
+				}
+			}
+
+			@media (max-width: 767px) {
+				.menu-secundario .texto {
+					display: inline;
+				}
+			}
+
+			@media (max-width: 750px) {
+				.contenido-artista {
+					background: #f1f1f1;
+					margin: 0 -15px;
+					border: none;
+					padding: 15px;
+				}
+			}
+
+			@media (min-width: 768px){
+				.caja-busqueda {
+					width: 50%;
+				}
 			}

@@ -1,57 +1,43 @@
+<?php
+	session_start();
+?>
+<?php
+    mysql_connect("localhost", "root", "") or die("Error connecting to database: ".mysql_error());
+    mysql_select_db("musicbox") or die(mysql_error());
+?>
 <!DOCTYPE html>
 <html>
-	<head>
-		<link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="css/css.css">
-		<link rel="icon" type="image/png" href="img/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Nuevos lanzamientos</title>
-	</head>
+	<?php
+		$title = 'Nuevos lanzamientos';
+		include("components/head.php");
+	?>
 	<body>
-		<div class="cabeza">
-			<!--El menu principal de la página-->
-			<div id="elmenu" class="menu">
-				<div id="logo"><a href="index.php" ><img src="img/logo_grande.png" alt=""></a></div>
-				<a href="javascript:void(0);" id="iconoresponsive" onclick="menuResponsive()"><img id="" src="img/iconohamburguesa.svg"></a>
-				<div id="ademenu">
-					<a href="nuevoslanzamientos.php">Nuevos lanzamientos</a>
-					<a href="musicapopular.php">M&uacute;sica</a>
-					<a href="#">Noticias</a>
-					<a href="contacto.php">Contacto</a>
-					<!--Opciones para el responsive-->
-					<a href="iniciarsesion.php" id="iniciosesionresponsive" style="display:none;">Iniciar sesi&oacute;n</a>
-					<a href="registro.php" id="registroresponsive" style="display:none;">Registrarse</a>
-				</div>
-				<!--Menú desplegable del extremo derecho-->
-				<div style="float:right;" class="menudesplegable">
-					<div class="menudesplegable2" onclick="menuDespegable()"><img id="iconodeiniciodesesion"src="img/iniciosension_icono.svg" ></div>
-					<div class="contenidodespegable" id="contenidodespegable2">
-					<?php
-					//Comprueba si el usuario está logueado o no, si está logueado muestra distintas opciones en el menú desplegable
-						if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-							echo "<a href='perfil-usuario.php'>Perfil del usuario</a>
-							<a href='cerrar-session.php'>Cerrar sesi&oacute;n</a>";
-		 				}
-
-		 				else{
-		 					echo "<a href='iniciarsesion.php'>Iniciar sesi&oacute;n</a>
-							<a href='registro.php'>Registrarse</a>";
-		 				}
-					?>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="cuerpo">
-			<div class="divdenuevoslanzamientos">
-			<h1>EN CONSTRUCCIÓN</h1>
-			</div>
-		</div>
-		<script type="text/javascript" src="js/main.js"></script>
-		<script type="text/javascript">
-			function menuDespegable(){
-				document.getElementById("contenidodespegable2").classList.toggle("mostrarcontenido");
+		<!-- Header -->
+		<?php include("components/header.php"); ?>
+		<div class="cuerpo container">
+			<div class="row">
+				<div class="col-sm-12">
+			<h2>Nuevos lanzamientos</h2>
+			<?php
+			 	$querynuevoslanzamientos = mysql_query("SELECT * FROM discos, artista WHERE discos.id_artista = artista.id_artista ORDER BY fecha_lanzamiento DESC LIMIT 12");
+					if(mysql_num_rows($querynuevoslanzamientos) > 0){
+						 while($results = mysql_fetch_array($querynuevoslanzamientos)){
+						 echo "<div style='max-width:220px;'class='nombre-disco-mas-disco-portada'><a href='disco.php?busqueda=".$results['titulo_disco']."&search=BUSCAR'><img class='portada-disco-artista'src='".$results['portada']."'></a>";
+ 						 echo "<a id='nombre-disco-estilo-enlance' href='disco.php?busqueda=".$results['titulo_disco']."&search=BUSCAR'><span style='font-size:30px;'>".$results['fecha_lanzamiento']."</span><br><span>".$results['titulo_disco']."</span><br><span>".$results['nombre']."</a></div>";
+				}
 			}
-		</script>
+			else {
+				echo "no existen resultados";
+			}
+			?>
+			</div>
+			</div>
+		</div>
+		</div>
+		<!--Pie-->
+		<?php include("components/footer.php"); ?>
+
+		<!-- Js Files -->
+		<?php include("components/js-files.php"); ?>
 	</body>
 </html>
