@@ -565,6 +565,10 @@
 				margin-bottom: 30px;
 			}
 
+			#lista-de-canciones {
+				margin-left: 15px 
+			}
+
 			#nombre-disco-estilo-enlance{
 				text-decoration: none;
 				position: absolute;
@@ -593,36 +597,33 @@
 			}
 
 			/*CSS de los discos*/
-			.divdiscos{
-				position: absolute;
-    			width: 85%;
-			}
 
 			#divdiscos-informaciondisco{
 				width: 70%;
 			}
 
-			#divdiscos-portada{
-			    width: 320px;
-			    height: 320px;
-			    position: relative;
-			    float: left;
-			    margin: 3px;
+			#divdiscos-divportada {
+				margin: 0 -15px;
+				display: block;
+				text-align: center;
+			}
+
+			#divdiscos-portada img{
+			    width: 100%;
 			}
 
 			.divdiscos-botondebajoportada{
-				background-color: lightgrey;
-			    width: 8%;
-			    margin-right: 11px;
-			    text-decoration: none;
-			    border: 1px solid black;
-			    float: left;
-			    text-align: center;
-			    position: relative;
-			    top: 333px;
-			    left: -324px;
-			    font-size: 13px;
-			    color: black;
+				width: calc(100% / 3);
+    			display: inline-block;
+				padding: 10px;
+				background: #222222;
+				color: #9d9d9d;
+			}
+
+			.divdiscos-botondebajoportada:hover {
+				text-decoration: none;
+				color: #fff;
+				background: #101010
 			}
 
 
@@ -652,15 +653,6 @@
 				padding: 7px;
 				background-color: white;
 				margin-left: 5%;
-			}
-
-			#calificacionyvoto{
-			    background-color: grey;
-			    width: 20%;
-			    float: right;
-			    position: absolute;
-			    top: 97px;
-			    left: 72%;
 			}
 
 			#calificacion-total{
@@ -726,9 +718,15 @@
 				
 			}
 
-			@media (max-width: 850px) {
+			@media (max-width: 935px) {
 				.menu-secundario .texto {
 					display: none;
+				}
+			}
+
+			@media (max-width: 767px) {
+				.menu-secundario .texto {
+					display: inline;
 				}
 			}
 
