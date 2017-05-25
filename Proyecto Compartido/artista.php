@@ -17,9 +17,15 @@
 ?>
 <html>
 <!-- Head -->
+<<<<<<< HEAD
 	<?php
 		$title = 'Artista';
 		include("components/head.php");
+=======
+	<?php 
+		$title = 'Artista';
+		include("components/head.php"); 
+>>>>>>> origin/master
 	?>
 	<body>
 		<!-- Header -->
@@ -29,6 +35,11 @@
         <div class="col-sm-4">
           <?php
             /*Obtiene el valor del formulario de busqueda*/
+<<<<<<< HEAD
+=======
+                
+
+>>>>>>> origin/master
                     /*Si hay resultados disponibles en la base de datos, los mostrará*/
                     if(mysql_num_rows($raw_results) > 0){
                         while($results = mysql_fetch_array($raw_results)){
@@ -65,12 +76,20 @@
                  }
             }
               echo "</div>";
+<<<<<<< HEAD
           }
+=======
+          } 
+>>>>>>> origin/master
         ?>
         </div>
       </div>
     <div>
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/master
     </div>
   </div>
    <!--Pie-->

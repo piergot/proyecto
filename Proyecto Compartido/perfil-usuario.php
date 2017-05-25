@@ -7,13 +7,20 @@
 ?>
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
 	<?php
 		$title = 'Perfil del Usuario';
 		include("components/head.php");
+=======
+	<?php 
+		$title = 'Perfil del Usuario';
+		include("components/head.php"); 
+>>>>>>> origin/master
 	?>
 	<body>
 		<!-- Header -->
 		<?php include("components/header.php"); ?>
+<<<<<<< HEAD
 		<div class="container cuerpo">
 			<h3 style='text-align:center;'>Bienvenido <?php echo $_SESSION['username']; ?></h3>
 			<h4>Discos puntuados</h4>
@@ -27,6 +34,10 @@
 				}
 			?>
 			<p><a href='cerrar-session.php'>Cerrar sesi&oacute;n</a></p>
+=======
+		<div class="cuerpo">
+			<div>HOLA!</div>
+>>>>>>> origin/master
 		</div>
 		<<!--Pie-->
 		<?php include("components/footer.php"); ?>

@@ -3,9 +3,15 @@
 ?>
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
 	<?php
 		$title = 'Iniciar Sesión';
 		include("components/head.php");
+=======
+	<?php 
+		$title = 'Iniciar Sesión';
+		include("components/head.php"); 
+>>>>>>> origin/master
 	?>
 	<body>
 		<!-- Header -->
@@ -30,6 +36,16 @@
 		</div>
 		<!--Pie-->
 		<?php include("components/footer.php"); ?>
+<<<<<<< HEAD
+=======
+
+		<!-- Js Files -->
+		<?php include("components/js-files.php"); ?>
+		<script type="text/javascript">
+			function menuDespegable(){
+				document.getElementById("contenidodespegable2").classList.toggle("mostrarcontenido");
+			}
+>>>>>>> origin/master
 
 		<!-- Js Files -->
 		<?php include("components/js-files.php"); ?>

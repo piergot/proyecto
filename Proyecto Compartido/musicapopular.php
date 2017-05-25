@@ -7,9 +7,15 @@
 ?>
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
 	<?php
 		$title = 'Música Popular';
 		include("components/head.php");
+=======
+	<?php 
+		$title = 'Música Popular';
+		include("components/head.php"); 
+>>>>>>> origin/master
 	?>
 	<body>
 		<!-- Header -->
@@ -21,9 +27,15 @@
 						<?php
 
 						/*Query para buscar en la base de datos los artistas más buscados*/
+<<<<<<< HEAD
 							$artistasmaspopulares = mysql_query("SELECT * FROM artista ORDER BY numero_visitas_artistas DESC LIMIT 15");
 							$contador = 0;
 							echo "<h2>Artistas más buscados</h2>";
+=======
+							$artistasmaspopulares = mysql_query("SELECT * FROM artista ORDER BY numero_visitas_artistas DESC");
+							$contador = 0;
+							echo "<h2>Artistas</h2>";
+>>>>>>> origin/master
 							if(mysql_num_rows($artistasmaspopulares) > 0){
 								echo "<ol>";
 								while($results = mysql_fetch_array($artistasmaspopulares)){
@@ -39,9 +51,15 @@
 					<div class="musicapopulardiv">
 						<?php
 							/*Query para buscar en la base de datos los discos más buscados*/
+<<<<<<< HEAD
 							$discossmaspopulares = mysql_query("SELECT * FROM discos, artista WHERE artista.id_artista = discos.id_artista ORDER BY numero_visitas DESC LIMIT 15");
 							$contador = 0;
 							echo "<h2>Discos más buscados</h2>";
+=======
+							$discossmaspopulares = mysql_query("SELECT * FROM discos, artista WHERE artista.id_artista = discos.id_artista ORDER BY numero_visitas DESC ");
+							$contador = 0;
+							echo "<h2>Discos</h2>";
+>>>>>>> origin/master
 							if(mysql_num_rows($discossmaspopulares) > 0){
 								echo "<ol>";
 								while($results = mysql_fetch_array($discossmaspopulares)){
@@ -57,6 +75,17 @@
 		</div>
 		<!--Pie-->
 		<?php include("components/footer.php"); ?>
+<<<<<<< HEAD
+=======
+
+		<!-- Js Files -->
+		<?php include("components/js-files.php"); ?>
+		<script type="text/javascript">
+			function menuDespegable(){
+				document.getElementById("contenidodespegable2").classList.toggle("mostrarcontenido");
+			}
+		</script>
+>>>>>>> origin/master
 
 		<!-- Js Files -->
 		<?php include("components/js-files.php"); ?>
