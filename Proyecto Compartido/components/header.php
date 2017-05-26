@@ -5,22 +5,17 @@
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
-<<<<<<< HEAD
 					<span class="icon-bar"></span>
-=======
-					<span class="icon-bar"></span> 
->>>>>>> origin/master
 				</button>
 				<a href="index.php" class="logo"><img src="img/logo_grande.png" alt=""></a>
+			</div>
+			<div class="navbar-form navbar-left buscador">
+				<?php include("components/buscador.php"); ?>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav menu-principal">
 					<li role="presentation"><a href="nuevoslanzamientos.php">Nuevos lanzamientos</a></li>
 					<li role="presentation"><a href="musicapopular.php">M&uacute;sica</a></li>
-<<<<<<< HEAD
-=======
-					<li role="presentation"><a href="#">Noticias</a></li>
->>>>>>> origin/master
 					<li role="presentation"><a href="contacto.php">Contacto</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right menu-secundario">
@@ -58,11 +53,6 @@
 						</button>
 					</div>
 					<ul class="nav nav-pills" id="menuPrincipal">
-<<<<<<< HEAD
-
-=======
-						
->>>>>>> origin/master
 						<li role="presentation"><a href="nuevoslanzamientos.php">Nuevos lanzamientos</a></li>
 						<li role="presentation"><a href="musicapopular.php">M&uacute;sica</a></li>
 						<li role="presentation"><a href="#">Noticias</a></li>
@@ -76,18 +66,9 @@
 				<div style="float:right;" class="menudesplegable">
 					<div class="menudesplegable2" onclick="menuDespegable()"><img id="iconodeiniciodesesion"src="img/iniciosension_icono.svg" ></div>
 					<div class="contenidodespegable" id="contenidodespegable2">
-<<<<<<< HEAD
-
-=======
-					
->>>>>>> origin/master
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>-->
-<<<<<<< HEAD
 </header>
-=======
-</header>
->>>>>>> origin/master

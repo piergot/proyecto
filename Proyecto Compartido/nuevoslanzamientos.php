@@ -7,20 +7,13 @@
 ?>
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
 	<?php
 		$title = 'Nuevos lanzamientos';
 		include("components/head.php");
-=======
-	<?php 
-		$title = 'Artista';
-		include("components/head.php"); 
->>>>>>> origin/master
 	?>
 	<body>
 		<!-- Header -->
 		<?php include("components/header.php"); ?>
-<<<<<<< HEAD
 		<div class="cuerpo container">
 			<div class="row">
 				<div class="col-sm-12">
@@ -41,25 +34,10 @@
 			</div>
 		</div>
 		</div>
-=======
-		<div class="cuerpo">
-			<div class="divdenuevoslanzamientos">
-			<h1>EN CONSTRUCCIÓN</h1>
-			</div>
-		</div>
->>>>>>> origin/master
 		<!--Pie-->
 		<?php include("components/footer.php"); ?>
 
 		<!-- Js Files -->
 		<?php include("components/js-files.php"); ?>
-<<<<<<< HEAD
-=======
-		<script type="text/javascript">
-			function menuDespegable(){
-				document.getElementById("contenidodespegable2").classList.toggle("mostrarcontenido");
-			}
-		</script>
->>>>>>> origin/master
 	</body>
 </html>
